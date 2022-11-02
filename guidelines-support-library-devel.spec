@@ -2,7 +2,7 @@
 # taken by the much older GNU Scientific Library
 Name:		guidelines-support-library-devel
 Summary:	Guidelines Support Library
-Version:	3.0.1
+Version:	4.0.0
 Release:	1
 Group:		Development/C
 License:	MIT

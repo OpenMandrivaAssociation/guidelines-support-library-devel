@@ -3,7 +3,7 @@
 Name:		guidelines-support-library-devel
 Summary:	Guidelines Support Library
 Version:	4.0.0
-Release:	1
+Release:	2
 Group:		Development/C
 License:	MIT
 Url:		https://github.com/microsoft/GSL

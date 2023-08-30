@@ -3,11 +3,12 @@
 Name:		guidelines-support-library-devel
 Summary:	Guidelines Support Library
 Version:	4.0.0
-Release:	2
+Release:	3
 Group:		Development/C
 License:	MIT
 Url:		https://github.com/microsoft/GSL
 Source0:	https://github.com/microsoft/GSL/archive/v%{version}/GSL-%{version}.tar.gz
+Patch0:		https://github.com/desktop-app/GSL/commit/09938e870420b69a01f55c755207c871bc20b4e5.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildArch:	noarch

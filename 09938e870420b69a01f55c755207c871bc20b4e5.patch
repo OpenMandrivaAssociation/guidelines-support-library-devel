@@ -1,0 +1,26 @@
+From 09938e870420b69a01f55c755207c871bc20b4e5 Mon Sep 17 00:00:00 2001
+From: John Preston <johnprestonmail@gmail.com>
+Date: Wed, 12 Jul 2023 21:57:42 +0400
+Subject: [PATCH] Workaround for std::variant bug in libstdc++.
+
+See:
+
+https://godbolt.org/z/rK8GPMhWj
+https://godbolt.org/z/7P1nd6n57
+---
+ include/gsl/pointers | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/gsl/pointers b/include/gsl/pointers
+index e6b23485..28611cf7 100644
+--- a/include/gsl/pointers
++++ b/include/gsl/pointers
+@@ -87,7 +87,7 @@ public:
+     static_assert(details::is_comparable_to_nullptr<T>::value, "T cannot be compared to nullptr.");
+ 
+     template <typename U, typename = std::enable_if_t<std::is_convertible<U, T>::value>>
+-    constexpr not_null(U&& u) : ptr_(std::forward<U>(u))
++    constexpr not_null(U&& u) noexcept : ptr_(std::forward<U>(u))
+     {
+         Expects(ptr_ != nullptr);
+     }
